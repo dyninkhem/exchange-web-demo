@@ -64,8 +64,8 @@ const PRESSURE_ITERATIONS = 8;
 const CURL_STRENGTH = 0.3;
 const VELOCITY_DISSIPATION = 0.97;
 const DENSITY_DISSIPATION = 0.985;
-const SPLAT_RADIUS = 0.012;
-const SPLAT_FORCE = 6.0;
+const SPLAT_RADIUS = 0.001;
+const SPLAT_FORCE = 3.0;
 
 export class HeroEngine {
   private gl: WebGL2RenderingContext;
@@ -495,7 +495,7 @@ export class HeroEngine {
           Math.abs(s.dy) * 8 + 4.0,
           Math.abs(s.dx + s.dy) * 6 + 5.0,
         ],
-        SPLAT_RADIUS * 3
+        SPLAT_RADIUS * 2
       );
     }
     this.splatQueue.length = 0;
